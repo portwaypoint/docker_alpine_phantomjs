@@ -1,5 +1,7 @@
 FROM alpine:3.4
 
+MAINTAINER richardj@bsquare.com
+
 # Install run-time deps
 RUN apk --no-cache add fontconfig libstdc++
 # Install build-time deps
@@ -29,8 +31,6 @@ USER phantom
 WORKDIR phantomjs
 # Expose the ports for nginx
 EXPOSE 80 443
-
-
 
 ENTRYPOINT ["/usr/local/bin/phantomjs"]
 CMD ["--help"]
